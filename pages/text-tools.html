@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Text Case Converter – Free Online Tool</title>
+  <meta name="description" content="Convert text to uppercase, lowercase, or capitalized format online. Fast, free, and privacy-first." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+<header>
+  <h1>DevToolkit</h1>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="json-formatter.html">JSON</a>
+    <a href="text-tools.html">Text</a>
+    <a href="image-tools.html">Image</a>
+    <a href="pdf-tools.html">PDF</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h2>Text Case Converter</h2>
+  <p>Convert text to different letter cases instantly. All processing happens in your browser.</p>
+
+  <textarea id="textInput" placeholder="Paste your text here..."></textarea>
+
+  <div class="buttons">
+    <button onclick="toUpperCaseText()">UPPERCASE</button>
+    <button onclick="toLowerCaseText()">lowercase</button>
+    <button onclick="capitalizeText()">Capitalize</button>
+    <button onclick="clearText()">Clear</button>
+    <button onclick="wordCount()">COUNT WORDS</button>
+    <button onclick="removeExtraSpaces()">REMOVE EXTRA SPACE</button>
+    <button onclick="removeLineBreaks()">REMOVE LINE BREAKER</button>
+    <button onclick="generateSlug()">GENERATE SLUG</button>
+  </div>
+
+  <pre id="textOutput"></pre>
+</main>
+
+<footer>
+  <p>© 2026 DevToolkit • Privacy-first browser tools</p>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/text-tools.js"></script>
+</body>
+</html>

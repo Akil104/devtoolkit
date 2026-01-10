@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JSON Formatter Online – Free & Secure</title>
+  <meta name="description" content="Format and minify JSON online in your browser. No data is uploaded. Fast, free, and secure JSON formatter." />
+  <link rel="stylesheet" href="../assets/css/json-formatter.css" />
+</head>
+<body>
+
+<header>
+  <h1>DevToolkit</h1>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="json-formatter.html">JSON</a>
+    <a href="text-tools.html">Text</a>
+    <a href="image-tools.html">Image</a>
+    <a href="pdf-tools.html">PDF</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h2>JSON Formatter</h2>
+  <p>Format and minify JSON data directly in your browser. No data is uploaded.</p>
+
+  <textarea id="jsonInput" placeholder="Paste your JSON here..."></textarea>
+
+  <div class="buttons">
+    <button onclick="formatJSON()">Format</button>
+    <button onclick="minifyJSON()">Minify</button>
+    <button onclick="clearJSON()">Clear</button>
+  </div>
+
+  <pre id="output"></pre>
+</main>
+
+<footer>
+  <p>© 2026 DevToolkit • Privacy-first browser tools</p>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/json-formatter.js"></script>
+</body>
+</html>
