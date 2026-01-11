@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Base64 Encoder & Decoder – DevToolkit</title>
+
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/developer-tools.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-container">
+    <h1 class="logo">DevToolkit</h1>
+  </div>
+</header>
+
+<main class="main-content">
+  <section class="tool-hero">
+    <h1>Base64 Encoder / Decoder</h1>
+    <p>Encode or decode Base64 strings instantly in your browser.</p>
+  </section>
+
+  <section class="tool-box">
+    <textarea
+      id="textInput"
+      placeholder="Paste your text or Base64 string here..."
+    ></textarea>
+
+    <div class="tool-actions">
+      <button onclick="encodeBase64()">Encode</button>
+      <button onclick="decodeBase64()">Decode</button>
+      <button class="secondary" onclick="clearOutput()">Clear</button>
+    </div>
+
+    <pre id="output"></pre>
+  </section>
+</main>
+
+
+<footer class="site-footer">
+  <p>© 2026 DevToolkit • Privacy-first browser tools</p>
+</footer>
+
+<script src="../../assets/js/developer-tools.js"></script>
+</body>
+</html>

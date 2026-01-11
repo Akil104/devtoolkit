@@ -1,53 +1,58 @@
-function toUpperCaseText(){
-  const input=document.getElementById("textInput").value;
-   document.getElementById("textOutput").textContent=input.toUpperCase();
+function getInput() {
+  return document.getElementById("textInput").value;
 }
-function toLowerCaseText(){
-    const input=document.getElementById("textInput").value;
-    document.getElementById("textOutput").textContent=input.toLowerCase();
-}
-function capitalizeText() {
-  const input = document.getElementById("textInput").value;
 
-  const result = input
+function setOutput(text) {
+  document.getElementById("textOutput").textContent = text;
+}
+
+function toUpperCaseText() {
+  setOutput(getInput().toUpperCase());
+}
+
+function toLowerCaseText() {
+  setOutput(getInput().toLowerCase());
+}
+
+function capitalizeText() {
+  const result = getInput()
     .toLowerCase()
     .split(" ")
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .map(word =>
+      word ? word.charAt(0).toUpperCase() + word.slice(1) : ""
+    )
     .join(" ");
 
-  document.getElementById("textOutput").textContent = result;
+  setOutput(result);
 }
 
-function clearText(){
-    document.getElementById("textInput").value="";
-    document.getElementById("textOutput").textContent="";
+function clearText() {
+  document.getElementById("textInput").value = "";
+  setOutput("");
 }
+
 function wordCount() {
-  const text = document.getElementById("textInput").value;
-
+  const text = getInput();
   const words = text.trim() ? text.trim().split(/\s+/).length : 0;
   const characters = text.length;
-  
 
-  document.getElementById("textOutput").textContent =
-    `Words: ${words}\nCharacters: ${characters}`;
+  setOutput(`Words: ${words}\nCharacters: ${characters}`);
 }
+
 function removeExtraSpaces() {
-  const text = document.getElementById("textInput").value;
-  document.getElementById("textOutput").textContent =
-    text.replace(/\s+/g, " ").trim();
+  setOutput(getInput().replace(/\s+/g, " ").trim());
 }
+
 function removeLineBreaks() {
-  const text = document.getElementById("textInput").value;
-  document.getElementById("textOutput").textContent =
-    text.replace(/(\r\n|\n|\r)/gm, " ");
+  setOutput(getInput().replace(/(\r\n|\n|\r)/gm, " "));
 }
+
 function generateSlug() {
-  const text = document.getElementById("textInput").value;
-  document.getElementById("textOutput").textContent =
-    text
+  setOutput(
+    getInput()
       .toLowerCase()
       .trim()
       .replace(/[^\w\s-]/g, "")
-      .replace(/\s+/g, "-");
+      .replace(/\s+/g, "-")
+  );
 }
