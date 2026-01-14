@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Image to Base64 – DevToolkit</title>
+  <title>Image Blur – DevToolkit</title>
 
   <link rel="stylesheet" href="../../assets/css/base.css">
   <link rel="stylesheet" href="../../assets/css/layout.css">
@@ -18,19 +18,20 @@
 
 <main class="main-content">
   <section class="tool-hero">
-    <h1>Image to Base64</h1>
-    <p>Convert images to Base64 strings.</p>
+    <h1>Image Blur</h1>
+    <p>Blur images instantly in your browser.</p>
   </section>
 
   <section class="tool-box">
     <input type="file" accept="image/*" onchange="loadImage(this, 'preview')" />
+
     <img id="preview" class="image-preview" />
 
     <div class="tool-actions">
-      <button onclick="imageToBase64('base64Output')">Convert</button>
+      <button onclick="blurImage(5)">Blur</button>
+      <button onclick="downloadImage('blurred.png')">Download</button>
+      <button class="secondary" onclick="resetImage()">Reset</button>
     </div>
-
-    <textarea id="base64Output" readonly></textarea>
   </section>
 </main>
 

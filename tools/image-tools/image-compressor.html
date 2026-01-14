@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image Compressor – DevToolkit</title>
+
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/image-tools.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-container">
+    <h1 class="logo">DevToolkit</h1>
+  </div>
+</header>
+
+<main class="main-content">
+  <section class="tool-hero">
+    <h1>Image Compressor</h1>
+    <p>Reduce image size without losing quality.</p>
+  </section>
+<section class="tool-box">
+  <input type="file" accept="image/*" onchange="loadImage(this, 'preview')" />
+
+  <img id="preview" class="image-preview" />
+
+  
+  <div class="tool-actions">
+    <button id="compressBtn" onclick="startCompress(0.6)">
+      Compress
+    </button>
+
+    <button
+      id="downloadBtn"
+      onclick="downloadCompressedImage()"
+      disabled
+    >
+      Download
+    </button>
+
+    <button class="secondary" onclick="resetImage()">
+      Reset
+    </button>
+    <p id="statusText" class="status-text"></p>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 DevToolkit • Privacy-first browser tools</p>
+</footer>
+
+<script src="../../assets/js/image-tools.js"></script>
+</body>
+</html>

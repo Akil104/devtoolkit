@@ -1,0 +1,108 @@
+/* -----------------------------
+   IMAGE TOOLS – GLOBAL STYLES
+------------------------------ */
+
+.tool-hero {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.tool-hero h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.tool-hero p {
+  font-size: 1.05rem;
+  color: #555;
+}
+
+/* Main tool container */
+.tool-box {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* File input */
+.tool-box input[type="file"] {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* Image preview */
+.image-preview {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 1.5rem;
+  background: #f9fafb;
+}
+
+/* Controls */
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+
+.controls label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.controls input[type="range"] {
+  width: 100%;
+}
+
+/* Action buttons */
+.tool-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tool-actions button {
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: #2563eb;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.tool-actions button:hover {
+  background: #1e4fd6;
+}
+
+.tool-actions button.secondary {
+  background: #6b7280;
+}
+
+.tool-actions button.secondary:hover {
+  background: #4b5563;
+}
+
+/* Output info */
+.output-info {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .tool-box {
+    padding: 1.4rem;
+  }
+}

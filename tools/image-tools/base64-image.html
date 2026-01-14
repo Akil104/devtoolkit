@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Base64 to Image – DevToolkit</title>
+
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/image-tools.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-container">
+    <h1 class="logo">DevToolkit</h1>
+  </div>
+</header>
+
+<main class="main-content">
+  <section class="tool-hero">
+    <h1>Base64 to Image</h1>
+    <p>Convert Base64 strings back to images.</p>
+  </section>
+
+  <section class="tool-box">
+    <textarea id="base64Input" placeholder="Paste Base64 here..."></textarea>
+
+    <div class="tool-actions">
+      <button onclick="base64ToImage('base64Input', 'preview')">Convert</button>
+    </div>
+
+    <img id="preview" class="image-preview" />
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 DevToolkit • Privacy-first browser tools</p>
+</footer>
+
+<script src="../../assets/js/image-tools.js"></script>
+</body>
+</html>

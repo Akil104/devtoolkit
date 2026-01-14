@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Image to Base64 – DevToolkit</title>
+  <title>Image Format Converter – DevToolkit</title>
 
   <link rel="stylesheet" href="../../assets/css/base.css">
   <link rel="stylesheet" href="../../assets/css/layout.css">
@@ -18,19 +18,30 @@
 
 <main class="main-content">
   <section class="tool-hero">
-    <h1>Image to Base64</h1>
-    <p>Convert images to Base64 strings.</p>
+    <h1>Image Format Converter</h1>
+    <p>Convert images to PNG, JPG, or WEBP.</p>
   </section>
 
   <section class="tool-box">
-    <input type="file" accept="image/*" onchange="loadImage(this, 'preview')" />
+    <input type="file" accept="image/*" onchange="loadFormatImage(this)" />
     <img id="preview" class="image-preview" />
 
-    <div class="tool-actions">
-      <button onclick="imageToBase64('base64Output')">Convert</button>
-    </div>
+  <div class="tool-actions">
+  <select id="formatSelect">
+    <option value="">Convert to…</option>
+    <option value="png">PNG</option>
+    <option value="jpg">JPG</option>
+    <option value="webp">WEBP</option>
+  </select>
 
-    <textarea id="base64Output" readonly></textarea>
+  <button id="convertBtn" onclick="startFormatConvert()">Convert</button>
+  <button id="downloadBtn" onclick="downloadConvertedImage()" disabled>
+    Download
+  </button>
+</div>
+
+<p id="statusText" class="status-text"></p>
+
   </section>
 </main>
 
