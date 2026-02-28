@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Merge PDF – DevToolkit</title>
+
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/pdf-tools.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-container">
+    <h1 class="logo">DevToolkit</h1>
+  </div>
+</header>
+
+<main class="main-content">
+
+  <section class="tool-hero">
+    <h1>Merge PDF</h1>
+    <p>Combine multiple PDF files into one document.</p>
+  </section>
+
+  <section class="tool-box">
+    <input type="file" multiple accept="application/pdf"
+           onchange="handlePdfSelection(this)">
+
+    <ul id="fileList" class="file-list"></ul>
+
+    <div class="tool-actions">
+      <button id="mergeBtn" onclick="mergePDFs()">Merge PDFs</button>
+      <button id="downloadBtn" onclick="downloadPdf('merged.pdf')" disabled>
+        Download
+      </button>
+    </div>
+
+    <div id="status" class="tool-status"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 DevToolkit • Privacy-first browser tools</p>
+</footer>
+
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+<script src="../../assets/js/pdf-tools.js"></script>
+</body>
+</html>
