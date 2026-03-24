@@ -40,7 +40,9 @@
 </footer>
 
 <script src="../../assets/js/image-tools.js">
-  fetch("http://localhost:5000/api/analytics", {
+</script>
+<script>
+    fetch("http://localhost:5000/api/analytics", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
@@ -50,6 +52,7 @@
     tool: "image-blurer"
   })
 });
+
 </script>
 </body>
 </html>
