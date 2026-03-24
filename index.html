@@ -15,6 +15,7 @@
 </header>
 
 <main class="main-content">
+
   <!-- HERO -->
   <section class="hero">
     <h2>All the tools you need, in one place</h2>
@@ -24,7 +25,15 @@
     </p>
   </section>
 
-  <!-- TOOLS GRID -->
+  <!-- ANNOUNCEMENTS -->
+  <section class="announcements">
+    <h2>Latest Updates</h2>
+    <div id="announcementList">
+      <p>Loading updates...</p>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
   <section class="tools">
     <div class="tool-card">
       <h3>Developer Tools</h3>
@@ -50,11 +59,141 @@
       <a href="pages/pdf-tools.html">Open →</a>
     </div>
   </section>
+
+  <!-- FEEDBACK BUTTON -->
+  <section class="feedback-trigger">
+    <button onclick="openFeedback()">Give Feedback</button>
+  </section>
+
+  <!-- FEEDBACK MODAL -->
+  <div id="feedbackModal" class="modal">
+    <div class="modal-content">
+
+      <span class="close" onclick="closeFeedback()">&times;</span>
+
+      <h2>Send Feedback</h2>
+
+      <input id="name" placeholder="Your Name">
+      <input id="email" placeholder="Your Email">
+      <textarea id="message" placeholder="Your Message"></textarea>
+
+      <button id="submitBtn" onclick="submitFeedback()">Submit</button>
+
+      <p id="feedbackSuccess" style="color:green; display:none;">
+        Feedback submitted successfully ✅
+      </p>
+
+    </div>
+  </div>
+
 </main>
 
 <footer class="site-footer">
   <p>© 2026 DevToolkit • Privacy-first browser tools</p>
 </footer>
+
+<script>
+
+// 🔹 Load announcements
+async function loadAnnouncements() {
+  try {
+    const res = await fetch("http://localhost:5000/api/announcements");
+    const data = await res.json();
+
+    let html = "";
+
+    if (data.length === 0) {
+      html = "<p>No updates yet.</p>";
+    } else {
+      data.slice(0, 3).forEach(item => {
+        html += `
+          <div class="announcement-card">
+            <strong>${item.title}</strong>
+            <p>${item.message}</p>
+          </div>
+        `;
+      });
+    }
+
+    document.getElementById("announcementList").innerHTML = html;
+
+  } catch (err) {
+    console.error(err);
+    document.getElementById("announcementList").innerHTML =
+      "<p style='color:red;'>Failed to load updates</p>";
+  }
+}
+
+// 🔹 Submit feedback
+async function submitFeedback() {
+  const btn = document.getElementById("submitBtn");
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  if (!name || !email || !message) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = "Submitting...";
+
+  try {
+    await fetch("http://localhost:5000/api/feedback", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name, email, message })
+    });
+
+    // show success
+    const successMsg = document.getElementById("feedbackSuccess");
+    successMsg.style.display = "block";
+
+    // clear inputs
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+
+    // close modal after delay
+    setTimeout(() => {
+      successMsg.style.display = "none";
+      closeFeedback();
+    }, 2000);
+
+  } catch (err) {
+    alert("Something went wrong");
+  }
+
+  btn.disabled = false;
+  btn.textContent = "Submit";
+}
+
+// open modal
+function openFeedback() {
+  document.getElementById("feedbackModal").style.display = "block";
+}
+
+// close modal
+function closeFeedback() {
+  document.getElementById("feedbackModal").style.display = "none";
+}
+
+// close on outside click
+window.onclick = function(event) {
+  const modal = document.getElementById("feedbackModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
+// init
+loadAnnouncements();
+
+</script>
 
 </body>
 </html>

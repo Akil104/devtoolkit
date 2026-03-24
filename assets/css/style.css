@@ -108,3 +108,98 @@ body {
   padding: 16px 20px;
   margin-top: auto;
 }
+/* ANNOUNCEMENTS */
+.announcements {
+  margin: 40px 0;
+}
+
+.announcement-card {
+  background: #fff;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* FEEDBACK */
+.feedback {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.feedback-box {
+  max-width: 500px;
+  margin: auto;
+}
+
+.feedback-box input,
+.feedback-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.feedback-box button {
+  padding: 10px 20px;
+  background: #4c6ef5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* BUTTON */
+.feedback-trigger {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.feedback-trigger button {
+  padding: 12px 25px;
+  background: #4c6ef5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* MODAL BACKGROUND */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+/* MODAL BOX */
+.modal-content {
+  background: white;
+  width: 400px;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* CLOSE BUTTON */
+.close {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* INPUTS */
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
