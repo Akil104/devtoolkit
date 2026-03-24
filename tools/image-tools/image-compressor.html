@@ -54,6 +54,17 @@
   <p>© 2026 DevToolkit • Privacy-first browser tools</p>
 </footer>
 
-<script src="../../assets/js/image-tools.js"></script>
+<script src="../../assets/js/image-tools.js">
+  fetch("http://localhost:5000/api/analytics", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    page: "images-tools",
+    tool: "image-compressor"
+  })
+});
+</script>
 </body>
 </html>

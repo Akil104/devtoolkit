@@ -32,6 +32,17 @@
   <p>© 2026 DevToolkit • Privacy-first browser tools</p>
 </footer>
 
-<script src="../../assets/js/text-tools.js"></script>
+<script src="../../assets/js/text-tools.js">
+  fetch("http://localhost:5000/api/analytics", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    page: "text tools",
+    tool: "extra space remover"
+  })
+});
+</script>
 </body>
 </html>
